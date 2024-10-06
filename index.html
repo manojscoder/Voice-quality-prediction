@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Drop Category Input Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        /* Styling for responsiveness */
+        @media (max-width: 600px) {
+            form {
+                width: 90%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Enter Network and Call Drop Data</h2>
+        <form action="/predict" method="POST">
+            <label for="inout_travelling">In/Out Travelling:</label>
+            <select id="inout_travelling" name="inout_travelling">
+                <option value="0">Indoor</option>
+                <option value="1">Outdoor</option>
+                <option value="2">Travelling</option>
+            </select>
+
+            <label for="operator">Operator:</label>
+            <select id="operator" name="operator">
+                <option value="3">MTNL</option>
+                <option value="2">Idea</option>
+                <option value="0">Airtel</option>
+                <option value="5">VI</option>
+                <option value="6">Vodafone</option>
+                <option value="1">BSNL</option>
+                <option value="4">RJio</option>
+            </select>
+
+
+            <label for="network_type">Network Type:</label>
+            <select id="network_type" name="network_type">
+                <option value="0">2G</option>
+                <option value="1">3G</option>
+                <option value="2">4G</option>
+            </select>
+
+            <label for="state_name">State Name:</label>
+<select id="state_name" name="state_name">
+    <option value="0">Andhra Pradesh</option>
+    <option value="1">Arunachal Pradesh</option>
+    <option value="2">Assam</option>
+    <option value="3">Bihar</option>
+    <option value="4">Chhattisgarh</option>
+    <option value="5">Delhi</option>
+    <option value="6">Goa</option>
+    <option value="7">Gujarat</option>
+    <option value="8">Haryana</option>
+    <option value="9">Himachal Pradesh</option>
+    <option value="10">Jammu and Kashmir</option>
+    <option value="11">Jharkhand</option>
+    <option value="12">Karnataka</option>
+    <option value="13">Kerala</option>
+    <option value="14">Madhya Pradesh</option>
+    <option value="15">Maharashtra</option>
+    <option value="16">Manipur</option>
+    <option value="17">Meghalaya</option>
+    <option value="18">Mizoram</option>
+    <option value="19">Nagaland</option>
+    <option value="20">Odisha</option>
+    <option value="21">Puducherry</option>
+    <option value="22">Punjab</option>
+    <option value="23">Rajasthan</option>
+    <option value="24">Tamil Nadu</option>
+    <option value="25">Telangana</option>
+    <option value="26">Tripura</option>
+    <option value="27">Uttar Pradesh</option>
+    <option value="28">Uttarakhand</option>
+    <option value="29">West Bengal</option>
+</select>
+<br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <h2>Prediction: <span class="prediction-text">{{prediction_text}}</span></h2>
+    </div>
+</body>
+</html>
